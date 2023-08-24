@@ -1,23 +1,10 @@
-// import { Box } from "@mui/material";
+/* eslint-disable no-unused-vars */
 import "./App.css";
 import TaskTable from "./features/Table/TaskTable";
 import AddTaskForm from "./features/Form/AddTaskForm";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Filter from "./features/Table/Filter";
-import { styled } from "@mui/material/styles";
-import { blue, green, red } from "@mui/material/colors";
-const Root = styled("div")(({ theme }) => ({
-  padding: theme.spacing(1),
-  [theme.breakpoints.down("sm")]: {
-    backgroundColor: red[500],
-  },
-  [theme.breakpoints.up("sm")]: {
-    backgroundColor: blue[500],
-  },
-  [theme.breakpoints.up("lg")]: {
-    backgroundColor: green[500],
-  },
-}));
+import { Box } from "@mui/material";
 
 function App() {
   return (
@@ -26,7 +13,7 @@ function App() {
         <Route
           index
           element={
-            <Root>
+            <Box>
               <Filter
                 filterField="status"
                 options={[
@@ -38,7 +25,7 @@ function App() {
               ></Filter>
               <TaskTable />
               <AddTaskForm></AddTaskForm>
-            </Root>
+            </Box>
           }
         />
       </Routes>

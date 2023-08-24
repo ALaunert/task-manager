@@ -1,6 +1,18 @@
 import { TableCell, TableHead, TableRow } from "@mui/material";
+import styled from "styled-components";
 // import Filter from "./Filter";
 
+const StyledTableCell = styled(TableCell)`
+  @media (min-width: 350px) {
+    width: 200px;
+  }
+  @media (min-width: 600px) {
+    width: 350px;
+  }
+  @media (min-width: 900px) {
+    width: 550px;
+  }
+`;
 function TableHeader() {
   return (
     <TableHead>
@@ -8,8 +20,8 @@ function TableHeader() {
         <TableCell sx={{ width: 10 }} align="left">
           #
         </TableCell>
-        <TableCell align="center">Task</TableCell>
-        <TableCell sx={{ minWidth: 50 }} align="center">
+        <StyledTableCell align="center">Task</StyledTableCell>
+        <TableCell sx={{ width: 30 }} align="center">
           Status
         </TableCell>
         <TableCell></TableCell>
