@@ -8,9 +8,7 @@ function TableHeader() {
         <TableCell sx={{ width: 10 }} align="left">
           #
         </TableCell>
-        <TableCell align="center" sx={{ minWidth: 250 }}>
-          Task
-        </TableCell>
+        <TableCell align="center">Task</TableCell>
         <TableCell sx={{ minWidth: 50 }} align="center">
           Status
         </TableCell>

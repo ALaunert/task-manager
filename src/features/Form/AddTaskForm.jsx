@@ -29,7 +29,7 @@ function AddTaskForm() {
           <TaskForm />
         ) : (
           <Button
-            sx={{ minWidth: 100 }}
+            sx={{ minWidth: 100, marginX: "auto" }}
             variant="contained"
             size="small"
             onClick={handleClick}

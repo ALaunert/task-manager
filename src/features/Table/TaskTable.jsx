@@ -14,11 +14,17 @@ import TableHeader from "./TableHeader";
 import TaskItem from "./TaskItem";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledTableContainer = styled(TableContainer)`
+  max-width: 100%;
+`;
 
 function TaskTable() {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const filter = searchParams.get("status");
   useEffect(
     function () {
       searchParams.set("status", "all");
@@ -28,12 +34,13 @@ function TaskTable() {
     [dispatch]
   );
   const tasks = useSelector((state) => state.taskTable.tasks);
-  const filter = searchParams.get("status");
+
   const displayedTasks =
     filter === "all" ? tasks : tasks.filter((task) => task.status === filter);
+
   return (
-    <TableContainer component={Paper} elevation={12}>
-      <Table sx={{ minWidth: 720 }}>
+    <StyledTableContainer component={Paper} elevation={12}>
+      <Table>
         <TableHeader />
         <TableBody>
           {tasks.length === 0 ? (
@@ -49,7 +56,7 @@ function TaskTable() {
           )}
         </TableBody>
       </Table>
-    </TableContainer>
+    </StyledTableContainer>
   );
 }
 
