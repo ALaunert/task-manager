@@ -18,7 +18,7 @@ function AddTaskForm() {
           mt: 2,
           borderRadius: 3,
           height: 20,
-          backgroundColor: "#eee",
+          backgroundColor: "#fff",
           display: "flex",
           alignItems: "center",
           p: 2,
@@ -29,7 +29,7 @@ function AddTaskForm() {
           <TaskForm />
         ) : (
           <Button
-            sx={{ minWidth: 100, marginX: "auto" }}
+            sx={{ minWidth: 100 }}
             variant="contained"
             size="small"
             onClick={handleClick}
