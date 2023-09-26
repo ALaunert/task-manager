@@ -13,11 +13,24 @@ const StyledTableCell = styled(TableCell)`
     width: 550px;
   }
 `;
+
+const StyledHeaderText = styled.p`
+  margin: 0;
+  font-size: 1.25rem;
+  color: #444;
+  letter-spacing: 2px;
+`;
+
 function TableHeader() {
   return (
     <TableHead>
       <TableRow>
-        <TableCell sx={{ width: 10 }} align="left">
+        <TableCell colSpan={4} align="center">
+          <StyledHeaderText>THINGS TO DO</StyledHeaderText>
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell sx={{ width: 5, padding: 0 }} align="center">
           #
         </TableCell>
         <StyledTableCell align="center">Task</StyledTableCell>

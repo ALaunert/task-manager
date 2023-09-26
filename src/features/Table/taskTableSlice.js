@@ -2,30 +2,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  showAddForm: false,
-  tasks: [
-    // {
-    //   id: "23",
-    //   task: "Do the dishes",
-    //   status: "active",
-    // },
-    // {
-    //   id: "45",
-    //   task: "Mop the floor",
-    //   status: "active",
-    // },
-    // {
-    //   id: "15",
-    //   task: "Make the bed",
-    //   status: "complete",
-    // },
-  ],
+  showSearchBar: false,
+  tasks: [],
 };
 
 export const taskTableSlice = createSlice({
   name: "taskTable",
   initialState,
   reducers: {
+    showSearch: (state) => {
+      state.showSearchBar = !state.showSearchBar;
+    },
     fetchTasks: (state) => {
       state.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     },
@@ -54,6 +41,6 @@ export const taskTableSlice = createSlice({
   },
 });
 
-export const { saveTasks, fetchTasks, deleteTask, updateTask } =
+export const { saveTasks, fetchTasks, deleteTask, updateTask, showSearch } =
   taskTableSlice.actions;
 export default taskTableSlice.reducer;

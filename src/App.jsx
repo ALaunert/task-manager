@@ -14,17 +14,7 @@ function App() {
           index
           element={
             <Box>
-              <Filter
-                filterField="status"
-                options={[
-                  { value: "all", label: "All" },
-                  { value: "complete", label: "Complete" },
-                  { value: "active", label: "Active" },
-                  { value: "not-started", label: "Not started" },
-                ]}
-              ></Filter>
               <TaskTable />
-              <AddTaskForm></AddTaskForm>
             </Box>
           }
         />

@@ -11,7 +11,8 @@ function TaskForm() {
   function handleClick() {
     dispatch(showForm());
   }
-  function handleSumbit() {
+  function handleSumbit(e) {
+    e.preventDefault();
     setIsEmpty(false);
     if (!taskText) {
       setIsEmpty(true);
@@ -24,7 +25,7 @@ function TaskForm() {
   return (
     <Box sx={{ width: "100%" }}>
       <form
-        onSubmit={handleSumbit}
+        onSubmit={(e) => handleSumbit(e)}
         style={{
           display: "flex",
           justifyContent: "flex-end",
@@ -50,6 +51,7 @@ function TaskForm() {
               },
             },
           }}
+          autoFocus
         ></TextField>
         <Box sx={{ display: "flex", height: "100%", gap: 1 }}>
           <Button

@@ -11,8 +11,19 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useDispatch } from "react-redux";
 import { deleteTask, saveTasks, updateTask } from "./taskTableSlice";
 import { useState } from "react";
+import styled from "styled-components";
 
-//TODO: TRY TO FIGURE OUT A WAY TO SHOW MENUS VIA REDUX
+const StyledTableCell = styled(TableCell)`
+  @media (min-width: 350px) {
+    width: 200px;
+  }
+  @media (min-width: 600px) {
+    width: 350px;
+  }
+  @media (min-width: 900px) {
+    width: 600px;
+  }
+`;
 
 function TaskItem({ task }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -37,7 +48,7 @@ function TaskItem({ task }) {
   return (
     <TableRow key={task.task}>
       <TableCell>{task.id}</TableCell>
-      <TableCell>{task.task}</TableCell>
+      <StyledTableCell>{task.task}</StyledTableCell>
       <TableCell align="center">
         <Chip
           label={task.status === "not-started" ? "not started" : task.status}

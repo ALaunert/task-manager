@@ -7,11 +7,11 @@ const StyledFilter = styled.div`
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   border-radius: 10px;
-  padding: 0.4rem;
+  /* padding: 0.4rem; */
   display: flex;
   gap: 0.4rem;
-  margin-bottom: 1rem;
-  justify-content: space-between;
+  /* margin-bottom: 1rem; */
+  /* justify-content: space-between; */
 `;
 
 const FilterButton = styled.button`
@@ -29,7 +29,7 @@ const FilterButton = styled.button`
   font-weight: 400;
   font-size: 0.875rem;
   /* To give the same height as select */
-  padding: 0.44rem 0.8rem;
+  /* padding: 0.44rem 0.8rem; */
   transition: all 0.3s;
 
   &:hover:not(:disabled) {
